@@ -1,0 +1,29 @@
+<template>   
+    <lightning-card  title="Conditional Rendering">   
+        <lightning-button label="Show Data" 
+            title="Non-primary action" 
+            onclick={handleClick} 
+            class="slds-m-left_x-small">
+        </lightning-button>    
+        <lightning-button label="Reset" 
+            title="Reset action" 
+            type="reset"
+            onclick={resetClick} 
+            class="slds-m-left_x-small">
+        </lightning-button>    
+
+        <template if:true={isVisible}>
+            <div class= "slds-m-around_medium">Welcome to Conditional Rendering</div>
+        </template>
+        <template if:false={isVisible}>
+            <div class= "slds-m-around_medium">Click on Show Data button to view data</div>
+        </template>
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="text" label="Type hello to see the data" onkeyup={changeHandler}></lightning-input>
+        <template if:true={getHelloWord}>
+            <div class="slds-m-around_medium">Hola !!! you types correctly</div>
+        </template>
+        </div>     
+    </lightning-card>
+
+</template>

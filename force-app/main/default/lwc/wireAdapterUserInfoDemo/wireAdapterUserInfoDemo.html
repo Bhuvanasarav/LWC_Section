@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="User Info using Wire Adapter Function">
+        <p>{Id}</p>
+        <div class="slds-var-p-around_medium">
+            <template if:true={userFields}>
+                <p>Email <strong>{userFields.Email.value}</strong></p>      
+                <p>Name <strong>{userFields.Name.value}</strong></p>  
+            </template>
+        </div>
+    </lightning-card>
+        <lightning-card title="User Info using Wire Adapter Property">
+            <p>{Id}</p>
+            <div class="slds-var-p-around_medium">
+                <template if:true={userFields}>
+                    <p>Email <strong>{userFieldProp.data.fields.Email.value}</strong></p>      
+                    <p>Name <strong>{userFieldProp.data.fields.Name.value}</strong></p>  
+                </template>
+            </div>
+        </lightning-card>
+    
+</template>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Wire Adapter getting Picklist Values By Record Type">
+        <template if:true={ratingOptions}>
+            <lightning-combobox 
+            label="Rating"
+            name="rating"
+            value={slectedRating}
+            placeholder="Select Rating"
+            options={ratingOptions}
+            onchange={changeHandler}></lightning-combobox>
+        </template>
+        <template if:true={industryOptions}>
+            <lightning-combobox 
+            label="Industry"
+            name="industry"
+            value={slectedIndustry}
+            placeholder="Select Industry"
+            options={industryOptions}
+            onchange={changeHandler}></lightning-combobox>
+        </template>
+
+        
+    </lightning-card>
+</template>

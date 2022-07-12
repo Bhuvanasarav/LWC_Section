@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <h1>We are in Query Selector Section</h1>
+        <template for:each={userNames} for:item="name">
+            <div class="name" key={name}>{name}</div>
+        </template>
+        <div class="child" lwc:dom="manual"></div>
+        <lightning-button class="slds-m-around_medium" label="Click me" onclick={clickHandler}>
+            
+        </lightning-button>
+    </lightning-card>
+</template>

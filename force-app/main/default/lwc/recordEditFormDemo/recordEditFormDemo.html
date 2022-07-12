@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Lightning Edit Form">
+        <lightning-record-edit-form
+        object-api-name={objectName}>
+            <lightning-input-field field-name={fields.contactName}></lightning-input-field>
+            <lightning-input-field field-name={fields.accountName}></lightning-input-field>
+            <lightning-input-field field-name={fields.email}></lightning-input-field>
+            <lightning-input-field field-name={fields.leadSource}></lightning-input-field>
+            <label class="slds-p-left__x-small">Enter Phone</label>
+            <lightning-input-field variant="label-hidden" field-name={fields.mobile}></lightning-input-field>
+            <lightning-button class="slds-m-around__xx-small" label="cancel" onclick={resetHandler}></lightning-button>
+            <lightning-button variant="brand" class="slds-m-around__xx-small" label="Save" type="submit"></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

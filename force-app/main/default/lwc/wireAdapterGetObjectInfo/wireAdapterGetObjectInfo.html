@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="Getting Object info using Wire Adapter">
+        <template if:true={objectInfo.data}>
+            <div class="slds-var-p-around__small">
+                <p>Default RecordType Id : {objectInfo.data.defaultRecordTypeId}</p>
+                <p>Object Name : {objectInfo.data.apiName}</p>
+            </div>
+        </template>
+        
+    </lightning-card>
+
+    <lightning-card title="Getting Multiple Object infos using Wire Adapter">
+        <template if:true={objInfos}>
+            <template for:each={objInfos.results} for:item="obj">
+                <div key={obj.result.apiName}>
+                    <div class="slds-var-p-around__small">
+                        <p>Default RecordType Id : {obj.result.defaultRecordTypeId}</p>
+                        <p>Object Name : {obj.result.apiName}</p>
+                    </div>
+                </div>
+                
+            </template>
+
+            
+        </template>
+        
+    </lightning-card>
+</template>

@@ -1,0 +1,28 @@
+<template>
+    <c-p2c-alert-component
+    message = "Hurray !!! I got the data. I am from Parent as an Attribute & @api decorated in child js."
+    title = "Parent to child primitive data communication"
+    is-visible = "false">
+    </c-p2c-alert-component>
+    
+    <div class="slds-var-m-bottom_medium"></div>
+    <c-p2c-carousal-component
+    carousel-details = {carouselData}>
+    </c-p2c-carousal-component>
+
+    <div class="slds-var-m-bottom_medium"></div>
+    <lightning-card title="Parent to child data passing on action in Parent">
+        <lightning-input type="number" label="Enter Percentage" onkeyup={handleChange} value={percent}></lightning-input>
+        <c-p2c-progress-component
+            progress-value= {percent}>
+        </c-p2c-progress-component>
+    </lightning-card>
+    
+    <div class="slds-var-m-bottom_medium"></div>
+    <lightning-card title="Calling Child Method from Parent">
+        <lightning-button variant="brand" label="Reset" title="Primary action" onclick={handleClick}></lightning-button>
+        <c-p2c-slider-commponent></c-p2c-slider-commponent>
+    </lightning-card>
+
+
+</template>

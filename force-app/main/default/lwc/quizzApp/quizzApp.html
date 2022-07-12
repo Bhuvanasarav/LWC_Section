@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Quizz App in LWC">
+        <div class="slds-m-around_medium">
+            <form>
+                <template for:each={myQuestions} for:item="myQuestion">
+                    <div key={myQuestion.id} >
+                        <strong>{myQuestion.id} : {myQuestion.question}</strong>
+                        <div class="slds-grid slds-gutters slds-m-bottom_medium">
+                            <div class="slds-col">
+                                <input type="radio" name={myQuestion.id} value="a" onchange={changeHandler}/>
+                                {myQuestion.options.a}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={myQuestion.id} value="b" onchange={changeHandler}/>
+                                {myQuestion.options.b}
+                            </div>
+                            <div class="slds-col">
+                                <input type="radio" name={myQuestion.id} value="c" onchange={changeHandler}/>
+                                {myQuestion.options.c}>
+                            </div>
+                          </div>
+                    </div>
+                </template>
+                <lightning-button variant="brand" type="submit"
+                    disabled={allNotSelected}
+                    label="Submit" 
+                    title="Submitting Quizz" 
+                    class="slds-m-around_small"
+                    onclick={submitHandler}>
+                </lightning-button>
+                <lightning-button variant="brand" type="reset"
+                    label="Reset" 
+                    title="Resetting Quizz" 
+                    class="slds-m-around_small"
+                    onclick={resetHandler}>
+                </lightning-button>
+                <template if:true={isSubmitted}>                  
+                        <div class={isScoredFully}>
+                            You have scored {correctAnswers} out of {myQuestions.length}
+                        </div>
+                </template>
+                
+            </form>                       
+        </div>
+    </lightning-card>
+
+</template>

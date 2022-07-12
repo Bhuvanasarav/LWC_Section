@@ -1,0 +1,54 @@
+<template>
+    <lightning-card title="For each Loop">
+        <div class="slds-var-m-around_medium">
+            <template for:each={carList} for:item="item">                        
+              <ul key={loopId} class="slds-has-dividers_around-space">
+                <li class="slds-item">
+                  {item}
+                </li>                
+              </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Array of Objects">
+        <div class="slds-var-m-around_medium">
+            <template for:each={ceoList} for:item="item">                        
+              <ul key={item.id} class="slds-has-dividers_around-space">
+                <li class="slds-item">
+                  {item.company}
+                </li>                
+              </ul>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Iterator">
+        <div class="slds-var-m-around_medium">
+            <template iterator:ceo = {ceoList}>      
+                <div key={ceo.value.id}>
+                    <ul  class="slds-has-dividers_around-space">
+                        <template if:true={ceo.first}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>List of Top Companies</strong>
+                            </div>                           
+                        </template>
+                        <li class="slds-item">
+                          <strong>{ceo.value.company} </strong>
+                          {ceo.value.name}
+                        </li>
+                        <template if:true={ceo.last}>
+                            <div class="slds-box slds-theme_shade">
+                                <strong>Thank You</strong>
+                            </div>                           
+                        </template>                
+                      </ul>
+                </div>                               
+            </template>
+        </div>
+    </lightning-card>
+
+    
+
+    
+</template>

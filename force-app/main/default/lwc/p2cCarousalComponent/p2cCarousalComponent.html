@@ -1,0 +1,19 @@
+<template>
+    <div class="slds-size_3-of-4">
+        <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">Carousel With data from Parent as Attribute
+        <lightning-carousel disable-auto-scroll>
+            <template for:each={carouselDetails} for:item=item>
+                <lightning-carousel-image
+                key = {item.header}
+                src = {item.src}
+                header = {item.header}
+                description = {item.description}
+                alternative-text = {item.alternativeText}
+                href = {item.href}>
+            </lightning-carousel-image>     
+            </template>   
+        </lightning-carousel>
+        </div>
+  </div>
+</template>
+

@@ -1,0 +1,13 @@
+div{
+   color: yellowgreen; 
+   font-size: 10px
+}
+.name{
+    color: blue;
+    font-size: 10 px;
+}
+.name:hover{
+    color: violet;
+    font-size:large;    
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

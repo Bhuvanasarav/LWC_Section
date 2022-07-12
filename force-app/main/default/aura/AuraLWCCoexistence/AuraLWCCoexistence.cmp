@@ -1,0 +1,12 @@
+<aura:component implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="message" type="String" />
+    <lightning:card title="Aura Coexistence">
+        <div class="slds-p-around_medium">
+            <div>{!v.message}</div>
+        </div>
+        <div class="slds-p-around_medium">
+            <c:lwcAuraCoexistence onsendmsg="{!c.handleClick}" detail="I am from Aura"></c:lwcAuraCoexistence>
+        </div>
+      
+    </lightning:card>
+</aura:component>	

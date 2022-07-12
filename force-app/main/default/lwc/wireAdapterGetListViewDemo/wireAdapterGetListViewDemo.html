@@ -1,0 +1,32 @@
+<template>
+    <lightning-card title="Get List View of Contact with Wire Adapter">
+        <div class="slds-p-around_medium">
+            <table class="slds-table slds-table_cell-buffer">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Title</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={contacts} for:item='contact'>
+                        <tr key={contact.fields.Id.value}>
+                            <td>{contact.fields.Name.value}</td>
+                            <td>{contact.fields.Email.value}</td>
+                            <td>{contact.fields.Title.value}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </div>
+        <div class="slds-grid">
+            <div class="slds-p-around_medium">
+                <lightning-button label="Previous" onclick={handlePrevPage}></lightning-button>
+            </div>
+            <div class="slds-p-around_medium">
+                <lightning-button label="Next" variant="brand" onclick={handleNextPage}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

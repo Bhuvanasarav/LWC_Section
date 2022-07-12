@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Get Nav Items Info with Wire Adapter">
+        <div class="slds-p-around_medium">
+            <template if:true={results}>
+                <p>Developer Name : {results.deveoperName}</p>
+                <p>Object Name : {results.objectApiName}</p>
+                <p>Page Reference : {results.pageReference.type}</p>
+
+            </template>
+        </div>
+    </lightning-card>
+</template>
